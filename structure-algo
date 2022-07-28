@@ -1,0 +1,28 @@
+ALGORITHM premier_algo
+VAR
+    //declarations de variables
+vyl,csn,nmbr_caractere,:INTEGER;
+test:STRING;
+i:=0;
+
+BEGIN
+    //traitement
+ Read (test)
+ WHILE (test[i]!=".") DO
+    nmbr_caractere+=;
+    i++;
+ END_WHILE
+ write("text is finish")
+FOR i FROM 0 TO nmbr_caractere STEP 1  DO
+    IF (test[i]=" ") THEN
+       nmbr_caractere+=
+       i++
+    END_IF
+END_FOR
+write("the type of word")
+IF (test=['a','o','i','e','u']) THEN
+    nmbr_caractere+=
+    i++
+END_IF
+write("le text est complet")
+END
