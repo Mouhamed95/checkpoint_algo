@@ -1,28 +1,55 @@
-ALGORITHM premier_algo
+ALGORITHM Probleme1_Solution tableau
 VAR
-    //declarations de variables
-vyl,csn,nmbr_caractere,:INTEGER;
-test:STRING;
-i:=0;
+ Tab1,Tab2:ARRAY_OF INTEGER[];
+ somme,n1,n2:INTEGER;
+ i,j:INTEGER;
+
 
 BEGIN
-    //traitement
- Read (test)
- WHILE (test[i]!=".") DO
-    nmbr_caractere+=;
-    i++;
- END_WHILE
- write("text is finish")
-FOR i FROM 0 TO nmbr_caractere STEP 1  DO
-    IF (test[i]=" ") THEN
-       nmbr_caractere+=
-       i++
+somme:=0;
+
+//on recupere la taille des tableaux
+write('donner la taille du premier tableau');
+Read(n1);
+write('donner la taille du deuxieme tableau');
+Read(n2);
+
+//on rempli le premier tableau 
+FOR i FROM 0 TO n1-1 STEP 1 DO
+    write("donner la valeur a l'indice",i );
+    Read(Tab1[i]);
+END_FOR
+//on rempli le deuxieme tableau
+FOR j FROM 0 TO n2-1 STEP 1  DO
+    write("donner la valeur a l'indice",j );
+    Read(Tab2[j]);
+END_FOR
+
+//comparer les elements du premier tableau au deuxieme tableau 
+//puis ajouter a la somme si l'element se triuve pas dans le tableau2 
+FOR i FROM 0 TO Tab1.length-1 STEP 1  DO
+    FOR j FROM 0 TO Tab2.length-1 STEP 1  DO
+        IF (Tab1[i]=Tab2[j]) THEN
+            break;
+        END_IF
+    END_FOR
+    IF (j=tab2.length) THEN
+        somme:=somme+Tab1[i];
+    END_IF
+
+END_FOR 
+
+//comparer les elements du deuxieme tableau au premier tableau 
+//puis ajouter a la somme si l'element se trouve pas dans le tableau1
+FOR j FROM 0 TO Tab2.length-1 STEP 1  DO
+    FOR i FROM 0 TO Tab1.length-1 STEP 1  DO
+        IF (Tab2[j]=Tab1[i]) THEN
+            break;
+        END_IF
+    END_FOR
+    IF (i=tab1.length) THEN
+        somme:=somme+Tab2[j];
     END_IF
 END_FOR
-write("the type of word")
-IF (test=['a','o','i','e','u']) THEN
-    nmbr_caractere+=
-    i++
-END_IF
-write("le text est complet")
+
 END
